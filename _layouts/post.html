@@ -1,0 +1,28 @@
+---
+layout: default
+comments: true
+---
+
+
+<header class="masthead" style="background-image:url('{{'/assets/img/' | append: page.image relative_url}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <div class="post-heading">
+                    <h1>{{page.title}}</h1>
+                    <h2 class="subheading">{{page.subtitle}}</h2><span class="meta">Posted by&nbsp;<a href="#">{{page.author}}</a>&nbsp;on {{page.date | date_to_long_string }}</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+               <p>{{content}}</p>
+            </div>
+        </div>
+    </div>
+</article>
