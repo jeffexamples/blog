@@ -10,7 +10,9 @@ type: home
             <div class="carousel-inner" role="listbox">
                 {%for post in site.posts limit: 3%}
                     <div class="carousel-item {%if forloop.index0 == 0 %} active {%endif%}">
+
                         <div class="jumbotron pulse animated carousel-hero" style="background-image:url('../..{{site.baseurl}}/assets/img/{{post.image}}'  );">
+                            <div class="hero-overlay"></div>
                             <h1 class="hero-title">{{post.title}}</h1>
                             <p class="hero-subtitle">{{post.content | truncate: 200}}</p>
                             <p><a class="btn btn-primary hero-button plat" role="button" href="{{post.url | prepend: site.baseurl}}">Learn more</a></p>
