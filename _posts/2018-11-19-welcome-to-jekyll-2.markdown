@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 subtitle: "Subtitle"
 author: "Jekyll"
-image: "about-me.png"
+image: "jekyll-strapi.jpg"
 date:   2018-11-19 23:44:12 -0300
 categories: jekyll update
 ---
