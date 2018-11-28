@@ -17,7 +17,7 @@ type: home
                             <p><a class="btn btn-primary hero-button plat" role="button" href="{{post.url | prepend: site.baseurl}}">Learn more</a></p>
                         </div>
                     </div>
-                {%- endfor -%}
+                {% endfor %}
             </div>
             <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><i class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
             <ol
@@ -33,6 +33,7 @@ type: home
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-lg-8">
+            {%- if strapi.collections.posts.size > 0 -%}
             {% for post in strapi.collections.posts limit: 10 %}
                 <div class="post-preview">
                     <a href="{{post.url | prepend: site.baseurl}}">
@@ -52,6 +53,7 @@ type: home
                 </div>
                 <hr>
             {% endfor %}
+            {%- endif -%}
 
             <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button></div>
         </div>
