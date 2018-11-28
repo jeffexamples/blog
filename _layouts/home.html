@@ -8,10 +8,9 @@ type: home
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
-                {%for post in site.posts limit: 3%}
+                {%for post in strapi.collections.posts limit: 3%}
                     <div class="carousel-item {%if forloop.index0 == 0 %} active {%endif%}">
-
-                        <div class="jumbotron pulse animated carousel-hero" style="background-image:url('../..{{site.baseurl}}/assets/img/{{post.image}}'  );">
+                        <div class="jumbotron pulse animated carousel-hero" style="background-image:url('{{site.strapi.endpoint}}{{post.image.url}}'  );">
                             <div class="hero-overlay"></div>
                             <h1 class="hero-title">{{post.title}}</h1>
                             <p class="hero-subtitle">{{post.content | truncate: 200}}</p>
@@ -34,14 +33,22 @@ type: home
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-lg-8">
-            {% for post in site.posts%}
+            {% for post in strapi.collections.posts limit: 10 %}
                 <div class="post-preview">
                     <a href="{{post.url | prepend: site.baseurl}}">
                         <h2 class="post-title">{{post.title}}</h2>
                         <h3 class="post-subtitle">{{post.subtitle}}</h3>
                         <p>{{post.content | truncate: 200}}</p>
                     </a>
-                    <p class="post-meta">Posted by&nbsp;<a href="#">{{post.author}} on {{post.date | date_to_long_string }}</a></p>
+                    <p class="post-meta">Posted by&nbsp;
+                        <a href="#">
+                            {% if post.user.username %}
+                                {{post.user.username}}
+                            {% else %}
+                                {{post.author}}
+                            {% endif %}
+                        </a> on {{post.date | date_to_long_string }}
+                    </p>
                 </div>
                 <hr>
             {% endfor %}
