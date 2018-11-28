@@ -33,7 +33,6 @@ type: home
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-lg-8">
-            {%- if strapi.collections.posts.size > 0 -%}
             {% for post in strapi.collections.posts limit: 10 %}
                 <div class="post-preview">
                     <a href="{{post.url | prepend: site.baseurl}}">
@@ -53,7 +52,6 @@ type: home
                 </div>
                 <hr>
             {% endfor %}
-            {%- endif -%}
 
             <div class="clearfix"><button class="btn btn-primary float-right" type="button">Older Posts&nbsp;⇒</button></div>
         </div>
