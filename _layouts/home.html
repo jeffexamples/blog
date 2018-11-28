@@ -8,7 +8,7 @@ type: home
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
-                {%- for post in strapi.collections.posts limit: 3 -%}
+                {% for post in strapi.collections.posts limit: 3 %}
                     <div class="carousel-item {%if forloop.index0 == 0 %} active {%endif%}">
                         <div class="jumbotron pulse animated carousel-hero" style="background-image:url('{{site.strapi.endpoint}}{{post.image.url}}'  );">
                             <div class="hero-overlay"></div>
