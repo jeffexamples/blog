@@ -4,14 +4,14 @@ comments: true
 ---
 
 
-<header class="masthead"  style="background-image:url('{{site.strapi.endpoint}}{{page.document.image.url}}')">
+<header class="masthead"  style="background-image:url('{{'/assets/img/' | append: page.image relaive_url}}')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto">
                 <div class="post-heading">
-                    <h1>{{page.document.title}}</h1>
-                    <h2 class="subheading">{{page.document.subtitle}}</h2><span class="meta">Posted by&nbsp;<a href="#">{{page.document.author}}</a>&nbsp;on {{page.document.date | date_to_long_string }}</span></div>
+                    <h1>{{page.title}}</h1>
+                    <h2 class="subheading">{{page.subtitle}}</h2><span class="meta">Posted by&nbsp;<a href="#">{{page.author}}</a>&nbsp;on {{page.date | date_to_long_string }}</span></div>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@ comments: true
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{site.baseurl}}/">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{site.baseurl}}/">Posts</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{page.document.title}}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{page.title}}</li>
                     </ol>
                 </nav>
-               <p>{{page.document.content | markdownify}}</p>
+               <p>{{page.content | markdownify}}</p>
             </div>
         </div>
     </div>
