@@ -3,7 +3,7 @@ backend:
   branch: master
   repo: jeffexamples/blog
 
-media_folder: "images/uploads"
+media_folder: "assets/uploads"
 
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
