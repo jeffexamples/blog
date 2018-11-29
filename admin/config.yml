@@ -18,5 +18,5 @@ collections:
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Post Image", name: "image", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Categories", name: "categories", widget: "list", field: {label: Name, name: categories, widget: "string"}}
       - {label: "Body", name: "body", widget: "markdown"}
