@@ -10,7 +10,7 @@ type: home
             <div class="carousel-inner" role="listbox">
                 {% for post in site.posts limit: 3 %}
                     <div class="carousel-item {%if forloop.index0 == 0 %} active {%endif%}">
-                        <div class="jumbotron pulse animated carousel-hero" style="background-image:url('assets/uploads{{post.image | relative_url}}'  );">
+                        <div class="jumbotron pulse animated carousel-hero" style="background-image:url('{{post.image | relative_url}}'  );">
                             <div class="hero-overlay"></div>
                             <h1 class="hero-title">{{post.title}}</h1>
                             <p class="hero-subtitle">{{post.content | truncate: 200}}</p>
